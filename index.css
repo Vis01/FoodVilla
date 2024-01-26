@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    margin: 18px;
+    border:1px solid black;
+}
+
+.nav-item>ul{
+    list-style-type: none;
+    display: flex;
+}
+.nav-item>ul>li{
+     padding: 10px;
+}
