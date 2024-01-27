@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
-//import---resList--from-"../utills/mockdata";
-import resList from "../utills/data";
-import Simmer from "./simmer.js";
+import Simmer from "./Simmer"
 import Rescard from "./Rescard";
 import Filtericon from "../utills/icons/Filter.svg";
-import restaurants from "../utills/data";
+import { Link } from "react-router-dom";
+
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
   const [filter1col, setfiter1col] = useState(false);
@@ -14,23 +13,18 @@ const Body = () => {
     fetchData();
   }, []);
 
-  // "flex border rounded-xl border-black bg-slate-50  px-1  ml-4 hover:bg-slate-100 "
-  // "flex border border-black px-1 rounded-xl bg-slate-300   ml-4"
-
   fetchData = async () => {
-    setListOfRestaurants(resList);
-
-    // const data=await fetch(
-    //   "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7040592&lng=77.10249019999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-    // );
-    // const json=await data.json();
-    // //optional chaining
-    // setListOfRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    const data=await fetch(
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7040592&lng=77.10249019999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+    );
+    const json=await data.json();
+    //optional chaining
+    setListOfRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
   };
 
   // conditional rendering
   return listOfRestaurants.length === 0 ? (
-    <Simmer />
+    <Simmer/>
   ) : (
     <div className=" ">
       <div className="container  h-8  md:flex">
@@ -105,8 +99,8 @@ const Body = () => {
       </div>
       
       <div className="container ml-10 mt-10 flex justify-between flex-wrap mr-5">
-        {listOfRestaurants.map((restaurant) => (
-          <Rescard key={restaurant.info.id} resData={restaurant.info} />
+        {listOfRestaurants.map((restaurant) => (    
+         <Link key={restaurant.info.id} to={"/restaurent/"+ restaurant.info.id} > <Rescard  resData={restaurant.info} /></Link>
         ))}
       </div>
     </div>

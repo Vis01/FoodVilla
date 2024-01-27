@@ -23,15 +23,6 @@ const Simmer = () => {
              <Fakecard/>
              <Fakecard/>
              <Fakecard/>
-            {/* <div className='container  w-64 h-64 m-5 rounded-lg bg-slate-200 '> </div>
-            <div className='container  w-64  h-64 m-5 rounded-lg bg-slate-200 '> </div>
-            <div className='container  w-64 h-64 m-5 rounded-lg bg-slate-200 '> </div>
-            <div className='container  w-64  m-5 h-64 rounded-lg bg-slate-200 '> </div>
-            <div className='container  w-64  m-5 h-64 rounded-lg bg-slate-200 '> </div>
-            <div className='container  w-64  m-5 h-64 rounded-lg bg-slate-200 '> </div>
-            <div className='container  w-64  m-5 h-64 rounded-lg bg-slate-200 '> </div>
-            <div className='container  w-64  m-5 h-64 rounded-lg bg-slate-200 '> </div>
-                 */}
             </div> 
         </div>
   )

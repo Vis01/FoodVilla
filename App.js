@@ -7,7 +7,8 @@ import About from "./src/components/About";
 import Error from "./src/components/Error";
 import Footer from "./src/components/Footer";
 import Contact from "./src/components/Contact";
- const App=()=>{
+import RestaurentMenu from "./src/components/RestaurentMenu";
+const App=()=>{
      return (
         <div>
         <Header/>
@@ -34,11 +35,15 @@ const appRouter=createBrowserRouter([
             {
                 path: "/contact",
                 element:<Contact/>
+            },
+            {
+                path: "/restaurent/:resid",
+                element:<RestaurentMenu/>
             }
         ],
         errorElement:<Error/>
     },
     
 ])
- const root=ReactDOM.createRoot(document.getElementById("root"));
- root.render(<RouterProvider router={appRouter}/>);
+const root=ReactDOM.createRoot(document.getElementById("root"));
+root.render(<RouterProvider router={appRouter}/>);
