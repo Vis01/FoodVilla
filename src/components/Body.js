@@ -3,6 +3,7 @@ import Simmer from "./Simmer"
 import Rescard from "./Rescard";
 import Filtericon from "../utills/icons/Filter.svg";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utills/useOnlineStatus";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
@@ -21,6 +22,8 @@ const Body = () => {
     //optional chaining
     setListOfRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
   };
+  const onlineStatus=useOnlineStatus();
+  if(!onlineStatus) return <h1 className="text-2xl font-bold">Oops you are offline</h1>
 
   // conditional rendering
   return listOfRestaurants.length === 0 ? (

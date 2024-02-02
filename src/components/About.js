@@ -8,7 +8,6 @@ const About = () => {
                 About
             </p>
           </div>
-
           <p className="text-xl mt-20">
              My name is Vishnu Jangid, and I am a passionate full-stack developer
              I have a solid foundation in Frontend-framworks,javascript,React.js

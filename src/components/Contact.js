@@ -1,7 +1,9 @@
+import UserClass from "./UserClass";
+
 const Contact=()=>{
     return (
         <div>
-            Contact us-8503816287
+            <UserClass/>
         </div>
     )
 }

@@ -28,9 +28,9 @@ const RestaurentMenu = () => {
  console.log(dishitems)
  const {name,cuisines,areaName,avgRatingString,totalRatingsString}=resInfo[0]?.card?.card?.info;
   return  (
-    <div className="mt-10  flex-col items-center justify-center ">
-      <div name=" forth container" className="flex justify-center mx-24">
-            <div className="flex-col ">
+    <div className="mt-10  flex-col items-center justify-center  ">
+      <div name=" forth container" className="flex justify-center mx-12  ">
+            <div className="flex-col w-full md:w-1/2">
               <div className="flex justify-between">
                 <div>
                   <h2 className="text-xl font-bold">
