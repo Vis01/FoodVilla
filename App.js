@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from "react";
+import React, { Suspense, lazy, useState } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./src/components/Header";
 import Body from "./src/components/Body";
@@ -8,14 +8,41 @@ import Error from "./src/components/Error";
 import Footer from "./src/components/Footer";
 import Contact from "./src/components/Contact";
 import RestaurentMenu from "./src/components/RestaurentMenu";
+import Offer from "./src/components/Offer";
+import Signin from "./src/components/Signin";
+import UserClass from "./src/components/UserClass";
+import UserContext from "./src/utills/UserContext";
+import { Provider } from "react-redux";
+import store from "./src/utills/store";
+import Cart from "./src/components/Cart";
+
 
 const About = lazy(()=> import("./src/components/About"));
+    
+
 const App=()=>{
+    const [user,setUser]=useState({
+        name:"vishnu",
+        email:"jangid",
+        signin:false,
+    });
+
      return (
         <div>
-        <Header/>
-        <Outlet/>
-        <Footer/>
+            <Provider store={store}>
+         <UserContext.Provider
+            value={{
+                user:user,
+                setUser:setUser
+            }
+
+            }
+         >
+                <Header/>
+                <Outlet/>
+                <Footer/>
+        </UserContext.Provider>  
+        </Provider> 
         </div>  
         
     );
@@ -38,6 +65,21 @@ const appRouter=createBrowserRouter([
             {
                 path: "/contact",
                 element:<Contact/>
+            },
+            {
+                path:"/offer",
+                element:<Offer/>
+
+            },
+            {
+                path:"/signin",
+                element:<Signin/>
+
+            },
+            {
+                path:"/cart",
+                element:<Cart/>
+
             },
             {
                 path: "/restaurent/:resid",

@@ -13,19 +13,20 @@ const RestaurentMenu = () => {
   }, []);
   fetchData = async () => {
     const data = await fetch(
-      "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.7040592&lng=77.10249019999999&restaurantId="+resid+"&catalog_qa=undefined&submitAction=ENTER"
+      "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=26.95250&lng=75.71050&restaurantId="+resid+"&catalog_qa=undefined&submitAction=ENTER"
     );
     const json = await data.json();
     setResInfo(json?.data?.cards);
    
-    //console.log(resInfo[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards);
+    // console.log(resInfo[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards);
   };
-  console.log(resid)
+
   
 
  if(resInfo?.length === 0) return ( <Simmer />)
- const dishitems=resInfo[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards;
- console.log(dishitems)
+ console.log(resInfo);
+ const dishitems=resInfo[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.itemCards;
+
  const {name,cuisines,areaName,avgRatingString,totalRatingsString}=resInfo[0]?.card?.card?.info;
   return  (
     <div className="mt-10  flex-col items-center justify-center  ">

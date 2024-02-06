@@ -23,14 +23,14 @@ const Body = () => {
     setListOfRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
   };
   const onlineStatus=useOnlineStatus();
-  if(!onlineStatus) return <h1 className="text-2xl font-bold">Oops you are offline</h1>
+  if(!onlineStatus) return <h1 className="text-2xl font-bold">Oops!!!  you are offline</h1>
 
   // conditional rendering
   return listOfRestaurants.length === 0 ? (
     <Simmer/>
   ) : (
     <div className=" ">
-      <div className="container  h-8  md:flex">
+      <div className="container  h-8 mb-2 sm:flex mb-0">
         <div className="flex ">
           <input
             type="text"
