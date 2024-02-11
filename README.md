@@ -4,9 +4,9 @@
 This project is a Swiggy clone developed using React.js, aimed at replicating the core functionalities of the Swiggy platform. It integrates real-time Swiggy API for fetching restaurant data, and incorporates Redux for state management. Tailwind CSS is used for styling to ensure a modern and responsive user interface, along with Simmer UI for an improved user experience.
 
 ## Live Link
-[Swiggy Clone Live Demo](https://main--vishnu-foodvila.netlify.app/)
-please install [CORS UNBLOCK](https://chromewebstore.google.com/detail/cors-unblock/lfhmikememgdcahcdlaciloancbhjino) chrome extantion for better experiense
-
+- [Swiggy Clone Live Demo](https://main--vishnu-foodvila.netlify.app/)
+- please install [CORS UNBLOCK](https://chromewebstore.google.com/detail/cors-unblock/lfhmikememgdcahcdlaciloancbhjino) chrome extantion for better experiense
+ 
 ## Features
 - Real-time Swiggy API integration for fetching restaurant data
 - Implementation of Redux for state management
