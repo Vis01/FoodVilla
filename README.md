@@ -5,6 +5,7 @@ This project is a Swiggy clone developed using React.js, aimed at replicating th
 
 ## Live Link
 [Swiggy Clone Live Demo](https://main--vishnu-foodvila.netlify.app/)
+please install [CORS UNBLOCK](https://chromewebstore.google.com/detail/cors-unblock/lfhmikememgdcahcdlaciloancbhjino) chrome extantion for better experiense
 
 ## Features
 - Real-time Swiggy API integration for fetching restaurant data
